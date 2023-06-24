@@ -2,6 +2,7 @@
 //! DO NOT EDIT
 use crate::common::*;
 use crate::AppKit::*;
+use crate::CoreFoundation::*;
 use crate::Foundation::*;
 use crate::WebKit::*;
 
@@ -27,6 +28,7 @@ extern_protocol!(
         );
 
         #[cfg(feature = "WebKit_DOMEvent")]
+        #[deprecated]
         #[method(dispatchEvent:)]
         unsafe fn dispatchEvent(&self, event: Option<&DOMEvent>) -> bool;
 

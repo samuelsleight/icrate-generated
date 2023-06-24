@@ -2,6 +2,7 @@
 //! DO NOT EDIT
 use crate::common::*;
 use crate::AppKit::*;
+use crate::CoreFoundation::*;
 use crate::Foundation::*;
 use crate::WebKit::*;
 
@@ -48,6 +49,7 @@ extern_protocol!(
     #[deprecated]
     pub unsafe trait DOMNodeFilter: NSObjectProtocol {
         #[cfg(feature = "WebKit_DOMNode")]
+        #[deprecated]
         #[method(acceptNode:)]
         unsafe fn acceptNode(&self, n: Option<&DOMNode>) -> c_short;
     }

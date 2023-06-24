@@ -2,6 +2,7 @@
 //! DO NOT EDIT
 use crate::common::*;
 use crate::AppKit::*;
+use crate::CoreFoundation::*;
 use crate::Foundation::*;
 use crate::WebKit::*;
 
@@ -32,18 +33,22 @@ extern_methods!(
     #[cfg(feature = "WebKit_DOMHTMLFrameSetElement")]
     unsafe impl DOMHTMLFrameSetElement {
         #[cfg(feature = "Foundation_NSString")]
+        #[deprecated]
         #[method_id(@__retain_semantics Other cols)]
         pub unsafe fn cols(&self) -> Id<NSString>;
 
         #[cfg(feature = "Foundation_NSString")]
+        #[deprecated]
         #[method(setCols:)]
         pub unsafe fn setCols(&self, cols: Option<&NSString>);
 
         #[cfg(feature = "Foundation_NSString")]
+        #[deprecated]
         #[method_id(@__retain_semantics Other rows)]
         pub unsafe fn rows(&self) -> Id<NSString>;
 
         #[cfg(feature = "Foundation_NSString")]
+        #[deprecated]
         #[method(setRows:)]
         pub unsafe fn setRows(&self, rows: Option<&NSString>);
     }
@@ -53,6 +58,7 @@ extern_methods!(
     /// Methods declared on superclass `DOMObject`
     #[cfg(feature = "WebKit_DOMHTMLFrameSetElement")]
     unsafe impl DOMHTMLFrameSetElement {
+        #[deprecated]
         #[method_id(@__retain_semantics Init init)]
         pub unsafe fn init(this: Option<Allocated<Self>>) -> Id<Self>;
     }

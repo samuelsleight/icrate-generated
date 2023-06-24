@@ -2,6 +2,7 @@
 //! DO NOT EDIT
 use crate::common::*;
 use crate::AppKit::*;
+use crate::CoreFoundation::*;
 use crate::Foundation::*;
 use crate::WebKit::*;
 
@@ -30,6 +31,7 @@ extern_methods!(
     #[cfg(feature = "WebKit_WebHistoryItem")]
     unsafe impl WebHistoryItem {
         #[cfg(feature = "Foundation_NSString")]
+        #[deprecated]
         #[method_id(@__retain_semantics Init initWithURLString:title:lastVisitedTimeInterval:)]
         pub unsafe fn initWithURLString_title_lastVisitedTimeInterval(
             this: Option<Allocated<Self>>,
@@ -39,29 +41,36 @@ extern_methods!(
         ) -> Option<Id<Self>>;
 
         #[cfg(feature = "Foundation_NSString")]
+        #[deprecated]
         #[method_id(@__retain_semantics Other originalURLString)]
         pub unsafe fn originalURLString(&self) -> Id<NSString>;
 
         #[cfg(feature = "Foundation_NSString")]
+        #[deprecated]
         #[method_id(@__retain_semantics Other URLString)]
         pub unsafe fn URLString(&self) -> Id<NSString>;
 
         #[cfg(feature = "Foundation_NSString")]
+        #[deprecated]
         #[method_id(@__retain_semantics Other title)]
         pub unsafe fn title(&self) -> Id<NSString>;
 
+        #[deprecated]
         #[method(lastVisitedTimeInterval)]
         pub unsafe fn lastVisitedTimeInterval(&self) -> NSTimeInterval;
 
         #[cfg(feature = "Foundation_NSString")]
+        #[deprecated]
         #[method_id(@__retain_semantics Other alternateTitle)]
         pub unsafe fn alternateTitle(&self) -> Id<NSString>;
 
         #[cfg(feature = "Foundation_NSString")]
+        #[deprecated]
         #[method(setAlternateTitle:)]
         pub unsafe fn setAlternateTitle(&self, alternate_title: Option<&NSString>);
 
         #[cfg(feature = "AppKit_NSImage")]
+        #[deprecated]
         #[method_id(@__retain_semantics Other icon)]
         pub unsafe fn icon(&self) -> Option<Id<NSImage>>;
     }

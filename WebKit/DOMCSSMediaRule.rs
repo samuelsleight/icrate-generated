@@ -2,6 +2,7 @@
 //! DO NOT EDIT
 use crate::common::*;
 use crate::AppKit::*;
+use crate::CoreFoundation::*;
 use crate::Foundation::*;
 use crate::WebKit::*;
 
@@ -29,10 +30,12 @@ extern_methods!(
     #[cfg(feature = "WebKit_DOMCSSMediaRule")]
     unsafe impl DOMCSSMediaRule {
         #[cfg(feature = "WebKit_DOMMediaList")]
+        #[deprecated]
         #[method_id(@__retain_semantics Other media)]
         pub unsafe fn media(&self) -> Option<Id<DOMMediaList>>;
 
         #[cfg(feature = "WebKit_DOMCSSRuleList")]
+        #[deprecated]
         #[method_id(@__retain_semantics Other cssRules)]
         pub unsafe fn cssRules(&self) -> Option<Id<DOMCSSRuleList>>;
 
@@ -40,6 +43,7 @@ extern_methods!(
         #[method(insertRule:index:)]
         pub unsafe fn insertRule_index(&self, rule: Option<&NSString>, index: c_uint) -> c_uint;
 
+        #[deprecated]
         #[method(deleteRule:)]
         pub unsafe fn deleteRule(&self, index: c_uint);
     }
@@ -49,6 +53,7 @@ extern_methods!(
     /// Methods declared on superclass `DOMObject`
     #[cfg(feature = "WebKit_DOMCSSMediaRule")]
     unsafe impl DOMCSSMediaRule {
+        #[deprecated]
         #[method_id(@__retain_semantics Init init)]
         pub unsafe fn init(this: Option<Allocated<Self>>) -> Id<Self>;
     }

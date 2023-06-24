@@ -2,6 +2,7 @@
 //! DO NOT EDIT
 use crate::common::*;
 use crate::AppKit::*;
+use crate::CoreFoundation::*;
 use crate::Foundation::*;
 use crate::WebKit::*;
 
@@ -32,10 +33,12 @@ extern_methods!(
     #[cfg(feature = "WebKit_DOMHTMLQuoteElement")]
     unsafe impl DOMHTMLQuoteElement {
         #[cfg(feature = "Foundation_NSString")]
+        #[deprecated]
         #[method_id(@__retain_semantics Other cite)]
         pub unsafe fn cite(&self) -> Id<NSString>;
 
         #[cfg(feature = "Foundation_NSString")]
+        #[deprecated]
         #[method(setCite:)]
         pub unsafe fn setCite(&self, cite: Option<&NSString>);
     }
@@ -45,6 +48,7 @@ extern_methods!(
     /// Methods declared on superclass `DOMObject`
     #[cfg(feature = "WebKit_DOMHTMLQuoteElement")]
     unsafe impl DOMHTMLQuoteElement {
+        #[deprecated]
         #[method_id(@__retain_semantics Init init)]
         pub unsafe fn init(this: Option<Allocated<Self>>) -> Id<Self>;
     }

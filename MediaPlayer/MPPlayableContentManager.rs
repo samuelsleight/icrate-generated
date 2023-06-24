@@ -2,6 +2,7 @@
 //! DO NOT EDIT
 use crate::common::*;
 use crate::AppKit::*;
+use crate::CoreFoundation::*;
 use crate::Foundation::*;
 use crate::MediaPlayer::*;
 
@@ -24,20 +25,24 @@ unsafe impl NSObjectProtocol for MPPlayableContentManager {}
 extern_methods!(
     #[cfg(feature = "MediaPlayer_MPPlayableContentManager")]
     unsafe impl MPPlayableContentManager {
+        #[deprecated = "Use CarPlay framework"]
         #[method_id(@__retain_semantics Other dataSource)]
         pub unsafe fn dataSource(
             &self,
         ) -> Option<Id<ProtocolObject<dyn MPPlayableContentDataSource>>>;
 
+        #[deprecated = "Use CarPlay framework"]
         #[method(setDataSource:)]
         pub unsafe fn setDataSource(
             &self,
             data_source: Option<&ProtocolObject<dyn MPPlayableContentDataSource>>,
         );
 
+        #[deprecated = "Use CarPlay framework"]
         #[method_id(@__retain_semantics Other delegate)]
         pub unsafe fn delegate(&self) -> Option<Id<ProtocolObject<dyn MPPlayableContentDelegate>>>;
 
+        #[deprecated = "Use CarPlay framework"]
         #[method(setDelegate:)]
         pub unsafe fn setDelegate(
             &self,
@@ -59,15 +64,19 @@ extern_methods!(
         #[method(setNowPlayingIdentifiers:)]
         pub unsafe fn setNowPlayingIdentifiers(&self, now_playing_identifiers: &NSArray<NSString>);
 
+        #[deprecated = "Use CarPlay framework"]
         #[method_id(@__retain_semantics Other sharedContentManager)]
         pub unsafe fn sharedContentManager() -> Id<Self>;
 
+        #[deprecated = "Use CarPlay framework"]
         #[method(reloadData)]
         pub unsafe fn reloadData(&self);
 
+        #[deprecated = "Use CarPlay framework"]
         #[method(beginUpdates)]
         pub unsafe fn beginUpdates(&self);
 
+        #[deprecated = "Use CarPlay framework"]
         #[method(endUpdates)]
         pub unsafe fn endUpdates(&self);
     }

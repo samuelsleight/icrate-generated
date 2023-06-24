@@ -2,6 +2,7 @@
 //! DO NOT EDIT
 use crate::common::*;
 use crate::AppKit::*;
+use crate::CoreFoundation::*;
 use crate::Foundation::*;
 use crate::WebKit::*;
 
@@ -47,9 +48,11 @@ extern_methods!(
         #[method(wheelDeltaY)]
         pub unsafe fn wheelDeltaY(&self) -> c_int;
 
+        #[deprecated]
         #[method(wheelDelta)]
         pub unsafe fn wheelDelta(&self) -> c_int;
 
+        #[deprecated]
         #[method(isHorizontal)]
         pub unsafe fn isHorizontal(&self) -> bool;
 
@@ -76,6 +79,7 @@ extern_methods!(
     /// Methods declared on superclass `DOMObject`
     #[cfg(feature = "WebKit_DOMWheelEvent")]
     unsafe impl DOMWheelEvent {
+        #[deprecated]
         #[method_id(@__retain_semantics Init init)]
         pub unsafe fn init(this: Option<Allocated<Self>>) -> Id<Self>;
     }

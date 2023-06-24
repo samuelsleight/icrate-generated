@@ -2,6 +2,7 @@
 //! DO NOT EDIT
 use crate::common::*;
 use crate::AppKit::*;
+use crate::CoreFoundation::*;
 use crate::Foundation::*;
 use crate::WebKit::*;
 
@@ -42,17 +43,21 @@ extern_methods!(
     #[cfg(feature = "WebKit_DOMMutationEvent")]
     unsafe impl DOMMutationEvent {
         #[cfg(feature = "WebKit_DOMNode")]
+        #[deprecated]
         #[method_id(@__retain_semantics Other relatedNode)]
         pub unsafe fn relatedNode(&self) -> Option<Id<DOMNode>>;
 
         #[cfg(feature = "Foundation_NSString")]
+        #[deprecated]
         #[method_id(@__retain_semantics Other prevValue)]
         pub unsafe fn prevValue(&self) -> Id<NSString>;
 
         #[cfg(feature = "Foundation_NSString")]
+        #[deprecated]
         #[method_id(@__retain_semantics Other attrName)]
         pub unsafe fn attrName(&self) -> Id<NSString>;
 
+        #[deprecated]
         #[method(attrChange)]
         pub unsafe fn attrChange(&self) -> c_ushort;
 
@@ -76,6 +81,7 @@ extern_methods!(
     /// Methods declared on superclass `DOMObject`
     #[cfg(feature = "WebKit_DOMMutationEvent")]
     unsafe impl DOMMutationEvent {
+        #[deprecated]
         #[method_id(@__retain_semantics Init init)]
         pub unsafe fn init(this: Option<Allocated<Self>>) -> Id<Self>;
     }

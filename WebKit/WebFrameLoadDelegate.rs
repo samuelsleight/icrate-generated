@@ -2,6 +2,7 @@
 //! DO NOT EDIT
 use crate::common::*;
 use crate::AppKit::*;
+use crate::CoreFoundation::*;
 use crate::Foundation::*;
 use crate::WebKit::*;
 
@@ -9,6 +10,7 @@ extern_protocol!(
     #[deprecated]
     pub unsafe trait WebFrameLoadDelegate: NSObjectProtocol {
         #[cfg(all(feature = "WebKit_WebFrame", feature = "WebKit_WebView"))]
+        #[deprecated]
         #[optional]
         #[method(webView:didStartProvisionalLoadForFrame:)]
         unsafe fn webView_didStartProvisionalLoadForFrame(
@@ -18,6 +20,7 @@ extern_protocol!(
         );
 
         #[cfg(all(feature = "WebKit_WebFrame", feature = "WebKit_WebView"))]
+        #[deprecated]
         #[optional]
         #[method(webView:didReceiveServerRedirectForProvisionalLoadForFrame:)]
         unsafe fn webView_didReceiveServerRedirectForProvisionalLoadForFrame(
@@ -31,6 +34,7 @@ extern_protocol!(
             feature = "WebKit_WebFrame",
             feature = "WebKit_WebView"
         ))]
+        #[deprecated]
         #[optional]
         #[method(webView:didFailProvisionalLoadWithError:forFrame:)]
         unsafe fn webView_didFailProvisionalLoadWithError_forFrame(
@@ -41,6 +45,7 @@ extern_protocol!(
         );
 
         #[cfg(all(feature = "WebKit_WebFrame", feature = "WebKit_WebView"))]
+        #[deprecated]
         #[optional]
         #[method(webView:didCommitLoadForFrame:)]
         unsafe fn webView_didCommitLoadForFrame(
@@ -54,6 +59,7 @@ extern_protocol!(
             feature = "WebKit_WebFrame",
             feature = "WebKit_WebView"
         ))]
+        #[deprecated]
         #[optional]
         #[method(webView:didReceiveTitle:forFrame:)]
         unsafe fn webView_didReceiveTitle_forFrame(
@@ -68,6 +74,7 @@ extern_protocol!(
             feature = "WebKit_WebFrame",
             feature = "WebKit_WebView"
         ))]
+        #[deprecated]
         #[optional]
         #[method(webView:didReceiveIcon:forFrame:)]
         unsafe fn webView_didReceiveIcon_forFrame(
@@ -78,6 +85,7 @@ extern_protocol!(
         );
 
         #[cfg(all(feature = "WebKit_WebFrame", feature = "WebKit_WebView"))]
+        #[deprecated]
         #[optional]
         #[method(webView:didFinishLoadForFrame:)]
         unsafe fn webView_didFinishLoadForFrame(
@@ -91,6 +99,7 @@ extern_protocol!(
             feature = "WebKit_WebFrame",
             feature = "WebKit_WebView"
         ))]
+        #[deprecated]
         #[optional]
         #[method(webView:didFailLoadWithError:forFrame:)]
         unsafe fn webView_didFailLoadWithError_forFrame(
@@ -101,6 +110,7 @@ extern_protocol!(
         );
 
         #[cfg(all(feature = "WebKit_WebFrame", feature = "WebKit_WebView"))]
+        #[deprecated]
         #[optional]
         #[method(webView:didChangeLocationWithinPageForFrame:)]
         unsafe fn webView_didChangeLocationWithinPageForFrame(
@@ -115,6 +125,7 @@ extern_protocol!(
             feature = "WebKit_WebFrame",
             feature = "WebKit_WebView"
         ))]
+        #[deprecated]
         #[optional]
         #[method(webView:willPerformClientRedirectToURL:delay:fireDate:forFrame:)]
         unsafe fn webView_willPerformClientRedirectToURL_delay_fireDate_forFrame(
@@ -127,6 +138,7 @@ extern_protocol!(
         );
 
         #[cfg(all(feature = "WebKit_WebFrame", feature = "WebKit_WebView"))]
+        #[deprecated]
         #[optional]
         #[method(webView:didCancelClientRedirectForFrame:)]
         unsafe fn webView_didCancelClientRedirectForFrame(
@@ -136,6 +148,7 @@ extern_protocol!(
         );
 
         #[cfg(all(feature = "WebKit_WebFrame", feature = "WebKit_WebView"))]
+        #[deprecated]
         #[optional]
         #[method(webView:willCloseFrame:)]
         unsafe fn webView_willCloseFrame(&self, sender: Option<&WebView>, frame: Option<&WebFrame>);
@@ -145,6 +158,7 @@ extern_protocol!(
             feature = "WebKit_WebScriptObject",
             feature = "WebKit_WebView"
         ))]
+        #[deprecated]
         #[optional]
         #[method(webView:didClearWindowObject:forFrame:)]
         unsafe fn webView_didClearWindowObject_forFrame(

@@ -2,6 +2,7 @@
 //! DO NOT EDIT
 use crate::common::*;
 use crate::AppKit::*;
+use crate::CoreFoundation::*;
 use crate::Foundation::*;
 use crate::WebKit::*;
 
@@ -68,6 +69,7 @@ extern_protocol!(
     #[deprecated]
     pub unsafe trait WebDownloadDelegate: NSURLDownloadDelegate {
         #[cfg(all(feature = "AppKit_NSWindow", feature = "WebKit_WebDownload"))]
+        #[deprecated]
         #[optional]
         #[method_id(@__retain_semantics Other downloadWindowForAuthenticationSheet:)]
         unsafe fn downloadWindowForAuthenticationSheet(

@@ -2,6 +2,7 @@
 //! DO NOT EDIT
 use crate::common::*;
 use crate::AppKit::*;
+use crate::CoreFoundation::*;
 use crate::Foundation::*;
 use crate::WebKit::*;
 
@@ -31,17 +32,21 @@ unsafe impl NSObjectProtocol for DOMHTMLUListElement {}
 extern_methods!(
     #[cfg(feature = "WebKit_DOMHTMLUListElement")]
     unsafe impl DOMHTMLUListElement {
+        #[deprecated]
         #[method(compact)]
         pub unsafe fn compact(&self) -> bool;
 
+        #[deprecated]
         #[method(setCompact:)]
         pub unsafe fn setCompact(&self, compact: bool);
 
         #[cfg(feature = "Foundation_NSString")]
+        #[deprecated]
         #[method_id(@__retain_semantics Other type)]
         pub unsafe fn r#type(&self) -> Id<NSString>;
 
         #[cfg(feature = "Foundation_NSString")]
+        #[deprecated]
         #[method(setType:)]
         pub unsafe fn setType(&self, r#type: Option<&NSString>);
     }
@@ -51,6 +56,7 @@ extern_methods!(
     /// Methods declared on superclass `DOMObject`
     #[cfg(feature = "WebKit_DOMHTMLUListElement")]
     unsafe impl DOMHTMLUListElement {
+        #[deprecated]
         #[method_id(@__retain_semantics Init init)]
         pub unsafe fn init(this: Option<Allocated<Self>>) -> Id<Self>;
     }

@@ -2,6 +2,7 @@
 //! DO NOT EDIT
 use crate::common::*;
 use crate::AppKit::*;
+use crate::CoreFoundation::*;
 use crate::Foundation::*;
 use crate::MediaPlayer::*;
 
@@ -24,12 +25,15 @@ unsafe impl NSObjectProtocol for MPPlayableContentManagerContext {}
 extern_methods!(
     #[cfg(feature = "MediaPlayer_MPPlayableContentManagerContext")]
     unsafe impl MPPlayableContentManagerContext {
+        #[deprecated = "Use CarPlay framework"]
         #[method(enforcedContentItemsCount)]
         pub unsafe fn enforcedContentItemsCount(&self) -> NSInteger;
 
+        #[deprecated = "Use CarPlay framework"]
         #[method(enforcedContentTreeDepth)]
         pub unsafe fn enforcedContentTreeDepth(&self) -> NSInteger;
 
+        #[deprecated = "Use CarPlay framework"]
         #[method(contentLimitsEnforced)]
         pub unsafe fn contentLimitsEnforced(&self) -> bool;
 
@@ -37,6 +41,7 @@ extern_methods!(
         #[method(contentLimitsEnabled)]
         pub unsafe fn contentLimitsEnabled(&self) -> bool;
 
+        #[deprecated = "Use CarPlay framework"]
         #[method(endpointAvailable)]
         pub unsafe fn endpointAvailable(&self) -> bool;
     }

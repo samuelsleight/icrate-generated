@@ -2,6 +2,7 @@
 //! DO NOT EDIT
 use crate::common::*;
 use crate::AppKit::*;
+use crate::CoreFoundation::*;
 use crate::Foundation::*;
 use crate::GameKit::*;
 
@@ -9,6 +10,7 @@ extern_protocol!(
     #[deprecated = "Use MCSession in association with MCSessionDelegate from the MultipeerConnectivity framework instead"]
     pub unsafe trait GKSessionDelegate: NSObjectProtocol {
         #[cfg(all(feature = "Foundation_NSString", feature = "GameKit_GKSession"))]
+        #[deprecated = "Use MCSession in association with MCSessionDelegate from the MultipeerConnectivity framework instead"]
         #[optional]
         #[method(session:peer:didChangeState:)]
         unsafe fn session_peer_didChangeState(
@@ -19,6 +21,7 @@ extern_protocol!(
         );
 
         #[cfg(all(feature = "Foundation_NSString", feature = "GameKit_GKSession"))]
+        #[deprecated = "Use MCSession in association with MCSessionDelegate from the MultipeerConnectivity framework instead"]
         #[optional]
         #[method(session:didReceiveConnectionRequestFromPeer:)]
         unsafe fn session_didReceiveConnectionRequestFromPeer(
@@ -32,6 +35,7 @@ extern_protocol!(
             feature = "Foundation_NSString",
             feature = "GameKit_GKSession"
         ))]
+        #[deprecated = "Use MCSession in association with MCSessionDelegate from the MultipeerConnectivity framework instead"]
         #[optional]
         #[method(session:connectionWithPeerFailed:withError:)]
         unsafe fn session_connectionWithPeerFailed_withError(
@@ -42,6 +46,7 @@ extern_protocol!(
         );
 
         #[cfg(all(feature = "Foundation_NSError", feature = "GameKit_GKSession"))]
+        #[deprecated = "Use MCSession in association with MCSessionDelegate from the MultipeerConnectivity framework instead"]
         #[optional]
         #[method(session:didFailWithError:)]
         unsafe fn session_didFailWithError(&self, session: &GKSession, error: &NSError);

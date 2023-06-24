@@ -2,6 +2,7 @@
 //! DO NOT EDIT
 use crate::common::*;
 use crate::AppKit::*;
+use crate::CoreFoundation::*;
 use crate::Foundation::*;
 use crate::WebKit::*;
 
@@ -33,6 +34,7 @@ extern_methods!(
     #[cfg(feature = "WebKit_WebArchive")]
     unsafe impl WebArchive {
         #[cfg(all(feature = "Foundation_NSArray", feature = "WebKit_WebResource"))]
+        #[deprecated]
         #[method_id(@__retain_semantics Init initWithMainResource:subresources:subframeArchives:)]
         pub unsafe fn initWithMainResource_subresources_subframeArchives(
             this: Option<Allocated<Self>>,
@@ -42,6 +44,7 @@ extern_methods!(
         ) -> Option<Id<Self>>;
 
         #[cfg(feature = "Foundation_NSData")]
+        #[deprecated]
         #[method_id(@__retain_semantics Init initWithData:)]
         pub unsafe fn initWithData(
             this: Option<Allocated<Self>>,
@@ -49,18 +52,22 @@ extern_methods!(
         ) -> Option<Id<Self>>;
 
         #[cfg(feature = "WebKit_WebResource")]
+        #[deprecated]
         #[method_id(@__retain_semantics Other mainResource)]
         pub unsafe fn mainResource(&self) -> Option<Id<WebResource>>;
 
         #[cfg(feature = "Foundation_NSArray")]
+        #[deprecated]
         #[method_id(@__retain_semantics Other subresources)]
         pub unsafe fn subresources(&self) -> Id<NSArray>;
 
         #[cfg(feature = "Foundation_NSArray")]
+        #[deprecated]
         #[method_id(@__retain_semantics Other subframeArchives)]
         pub unsafe fn subframeArchives(&self) -> Id<NSArray>;
 
         #[cfg(feature = "Foundation_NSData")]
+        #[deprecated]
         #[method_id(@__retain_semantics Other data)]
         pub unsafe fn data(&self) -> Id<NSData>;
     }

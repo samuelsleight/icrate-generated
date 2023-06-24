@@ -2,6 +2,7 @@
 //! DO NOT EDIT
 use crate::common::*;
 use crate::AppKit::*;
+use crate::CoreFoundation::*;
 use crate::Foundation::*;
 use crate::GameKit::*;
 
@@ -9,11 +10,13 @@ extern_protocol!(
     #[deprecated = "You should instead implement the GKChallengeListener protocol and register a listener with GKLocalPlayer."]
     pub unsafe trait GKChallengeEventHandlerDelegate: NSObjectProtocol {
         #[cfg(feature = "GameKit_GKChallenge")]
+        #[deprecated = "You should instead implement the GKChallengeListener protocol and register a listener with GKLocalPlayer."]
         #[optional]
         #[method(localPlayerDidSelectChallenge:)]
         unsafe fn localPlayerDidSelectChallenge(&self, challenge: Option<&GKChallenge>);
 
         #[cfg(feature = "GameKit_GKChallenge")]
+        #[deprecated = "You should instead implement the GKChallengeListener protocol and register a listener with GKLocalPlayer."]
         #[optional]
         #[method(shouldShowBannerForLocallyReceivedChallenge:)]
         unsafe fn shouldShowBannerForLocallyReceivedChallenge(
@@ -22,11 +25,13 @@ extern_protocol!(
         ) -> bool;
 
         #[cfg(feature = "GameKit_GKChallenge")]
+        #[deprecated = "You should instead implement the GKChallengeListener protocol and register a listener with GKLocalPlayer."]
         #[optional]
         #[method(localPlayerDidReceiveChallenge:)]
         unsafe fn localPlayerDidReceiveChallenge(&self, challenge: Option<&GKChallenge>);
 
         #[cfg(feature = "GameKit_GKChallenge")]
+        #[deprecated = "You should instead implement the GKChallengeListener protocol and register a listener with GKLocalPlayer."]
         #[optional]
         #[method(shouldShowBannerForLocallyCompletedChallenge:)]
         unsafe fn shouldShowBannerForLocallyCompletedChallenge(
@@ -35,11 +40,13 @@ extern_protocol!(
         ) -> bool;
 
         #[cfg(feature = "GameKit_GKChallenge")]
+        #[deprecated = "You should instead implement the GKChallengeListener protocol and register a listener with GKLocalPlayer."]
         #[optional]
         #[method(localPlayerDidCompleteChallenge:)]
         unsafe fn localPlayerDidCompleteChallenge(&self, challenge: Option<&GKChallenge>);
 
         #[cfg(feature = "GameKit_GKChallenge")]
+        #[deprecated = "You should instead implement the GKChallengeListener protocol and register a listener with GKLocalPlayer."]
         #[optional]
         #[method(shouldShowBannerForRemotelyCompletedChallenge:)]
         unsafe fn shouldShowBannerForRemotelyCompletedChallenge(
@@ -48,6 +55,7 @@ extern_protocol!(
         ) -> bool;
 
         #[cfg(feature = "GameKit_GKChallenge")]
+        #[deprecated = "You should instead implement the GKChallengeListener protocol and register a listener with GKLocalPlayer."]
         #[optional]
         #[method(remotePlayerDidCompleteChallenge:)]
         unsafe fn remotePlayerDidCompleteChallenge(&self, challenge: Option<&GKChallenge>);

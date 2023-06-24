@@ -2,6 +2,7 @@
 //! DO NOT EDIT
 use crate::common::*;
 use crate::AppKit::*;
+use crate::CoreFoundation::*;
 use crate::Foundation::*;
 use crate::WebKit::*;
 
@@ -32,13 +33,16 @@ extern_methods!(
     #[cfg(feature = "WebKit_DOMCharacterData")]
     unsafe impl DOMCharacterData {
         #[cfg(feature = "Foundation_NSString")]
+        #[deprecated]
         #[method_id(@__retain_semantics Other data)]
         pub unsafe fn data(&self) -> Id<NSString>;
 
         #[cfg(feature = "Foundation_NSString")]
+        #[deprecated]
         #[method(setData:)]
         pub unsafe fn setData(&self, data: Option<&NSString>);
 
+        #[deprecated]
         #[method(length)]
         pub unsafe fn length(&self) -> c_uint;
 
@@ -51,6 +55,7 @@ extern_methods!(
         ) -> Option<Id<NSString>>;
 
         #[cfg(feature = "Foundation_NSString")]
+        #[deprecated]
         #[method(appendData:)]
         pub unsafe fn appendData(&self, data: Option<&NSString>);
 
@@ -76,6 +81,7 @@ extern_methods!(
     /// Methods declared on superclass `DOMObject`
     #[cfg(feature = "WebKit_DOMCharacterData")]
     unsafe impl DOMCharacterData {
+        #[deprecated]
         #[method_id(@__retain_semantics Init init)]
         pub unsafe fn init(this: Option<Allocated<Self>>) -> Id<Self>;
     }

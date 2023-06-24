@@ -3,6 +3,7 @@
 use crate::common::*;
 use crate::AppKit::*;
 use crate::Contacts::*;
+use crate::CoreFoundation::*;
 use crate::CoreLocation::*;
 use crate::Foundation::*;
 use crate::MapKit::*;
@@ -81,9 +82,11 @@ extern_methods!(
         #[method(setPinTintColor:)]
         pub unsafe fn setPinTintColor(&self, pin_tint_color: Option<&NSColor>);
 
+        #[deprecated]
         #[method(animatesDrop)]
         pub unsafe fn animatesDrop(&self) -> bool;
 
+        #[deprecated]
         #[method(setAnimatesDrop:)]
         pub unsafe fn setAnimatesDrop(&self, animates_drop: bool);
 

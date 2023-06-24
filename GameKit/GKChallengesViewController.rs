@@ -2,6 +2,7 @@
 //! DO NOT EDIT
 use crate::common::*;
 use crate::AppKit::*;
+use crate::CoreFoundation::*;
 use crate::Foundation::*;
 use crate::GameKit::*;
 
@@ -40,11 +41,13 @@ unsafe impl NSUserInterfaceItemIdentification for GKChallengesViewController {}
 extern_methods!(
     #[cfg(feature = "GameKit_GKChallengesViewController")]
     unsafe impl GKChallengesViewController {
+        #[deprecated]
         #[method_id(@__retain_semantics Other challengeDelegate)]
         pub unsafe fn challengeDelegate(
             &self,
         ) -> Option<Id<ProtocolObject<dyn GKChallengesViewControllerDelegate>>>;
 
+        #[deprecated]
         #[method(setChallengeDelegate:)]
         pub unsafe fn setChallengeDelegate(
             &self,
